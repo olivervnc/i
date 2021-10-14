@@ -3,6 +3,7 @@ import logging
 import shutil
 import json
 import time
+import re
 from multiprocessing.pool import ThreadPool as Pool
 
 from rich.logging import RichHandler
