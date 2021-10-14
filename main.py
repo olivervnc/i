@@ -3,11 +3,19 @@ import logging
 import shutil
 import json
 import time
+import rei
+import json
+import logging
 import re
+import time
+from urllib.parse import urljoin,quote
+from html import unescape
 from multiprocessing.pool import ThreadPool as Pool
 
 from rich.logging import RichHandler
 from rich.console import Console
+from bs4 import BeautifulSoup
+import requests
 
 from iwara import IwaraParser
 
