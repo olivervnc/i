@@ -1,0 +1,7 @@
+from iwara import IwaraParser
+parser=IwaraParser(level="CRITICAL")
+generate_search_link=parser.generate_search_link
+download=parser.download
+parse_search_page=parser.parse_search_page
+parse_video_page=parser.parse_video_page
+get_video_links=parser.get_video_links
