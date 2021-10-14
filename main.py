@@ -88,7 +88,7 @@ def download_single(args):
        return
     title_=title+'_'+node_id
     tmp=os.path.join("/content/tmp/iwara",sub,author,title_)
-    os.system(f'nohup rm -r "{tmp}"')
+    shutil.rmtree(tmp,True)
     os.makedirs(tmp,exist_ok=True)    
     if len(item["images"])>1:
       if os.path.exists(os.path.join(tar,f"{title_}.zip")):
@@ -112,12 +112,12 @@ def download_single(args):
         shutil.move(os.path.join(tmp,os.listdir(tmp)[0]),os.path.join(tar,f"{title_}.jpg"))
     except Exception as e:
       logger.exception(f"下载出错:{title} - {e}")
-    shutil.rmtree(tmp)
+    shutil.rmtree(tmp,True)
     if time.time()<start_time+5:
       time.sleep(start_time+5-time.time())
   elif item["type"]=='video':
     tmp=os.path.join("/content/tmp/iwara",sub,author,node_id)
-    os.system(f'rm -r "{tmp}"')
+    shutil.rmtree(tmp,True)
     os.makedirs(tmp,exist_ok=True)
     logger.info(f"开始下载:{title} 作者:{author}")
     thumbnail=item["thumbnail"]
