@@ -1,5 +1,6 @@
 python -c "from google.colab import drive;drive.mount('/content/drive')"
-git clone https://github.com/olivervnc/i.git
+clear
+nohup git clone https://github.com/olivervnc/i.git
 cd i
-pip install -r requirements.txt
-python main.py
+nohup pip install -r requirements.txt
+nohup python main.py
