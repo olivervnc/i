@@ -1,6 +1,7 @@
 import os
 import logging
 import shutil
+import json
 import time
 from multiprocessing.pool import ThreadPool as Pool
 
@@ -15,6 +16,9 @@ download=parser.download
 parse_search_page=parser.parse_search_page
 parse_video_page=parser.parse_video_page
 get_video_links=parser.get_video_links
+
+with open("keys.json") as f:
+  keys=json.load(f)
 
 logger_level="INFO" #@param ["DEBUG","INFO","WARNING","ERROR","CRITICAL"]
 stream=False #@param {type:"boolean"}
