@@ -88,7 +88,7 @@ def download_single(args):
        return
     title_=title+'_'+node_id
     tmp=os.path.join("/content/tmp/iwara",sub,author,title_)
-    os.system(f'rm -r "{tmp}"')
+    os.system(f'nohup rm -r "{tmp}"')
     os.makedirs(tmp,exist_ok=True)    
     if len(item["images"])>1:
       if os.path.exists(os.path.join(tar,f"{title_}.zip")):
